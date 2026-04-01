@@ -15,6 +15,92 @@ Documentación: [Link a referencia SIN si aplica]
 
 ---
 
+## MÓDULO 0: ANÁLISIS Y PLANIFICACIÓN (SPRINT 1)
+
+---
+
+### TICKET: SFE-ANALISIS-001
+
+**Título:** Análisis de Requerimientos SIN y Documentación Técnica
+
+**Tipo:** Análisis  
+**Microservicio:** No  
+**Prioridad:** P0 - Critical  
+**Estimación:** 3 pts  
+**Fecha Inicio:** 01/04/2026  
+**Fecha Conclusión:** 02/04/2026
+
+**Documentación Requerida:**
+
+- 📖 [Portal de Información SIAT](https://siatinfo.impuestos.gob.bo)
+- 📖 [Manual de Facturación SIN](https://siatinfo.impuestos.gob.bo/index.php/facturacion-en-linea)
+
+**Descripción:**
+Análisis exhaustivo de los requerimientos del SIN y documentación técnica para garantizar el cumplimiento normativo.
+
+**Criterios de Aceptación:**
+
+- [ ] Revisión completa de documentación oficial del SIN
+- [ ] Análisis de especificaciones SOAP y XSD
+- [ ] Identificación de casos de uso críticos
+- [ ] Matriz de requerimientos funcionales y no funcionales
+- [ ] Checklist de cumplimiento SIN
+
+**Entregables:**
+
+```
+1. Documento de análisis de requerimientos SIN
+2. Matriz de trazabilidad de requerimientos
+3. Identificación de riesgos técnicos y regulatorios
+4. Checklist de cumplimiento SIN
+```
+
+**Nota:** Ticket inicial del proyecto. Debe completarse antes de cualquier desarrollo.
+
+---
+
+### TICKET: SFE-PLAN-001
+
+**Título:** Planificación de Arquitectura y Microservicios
+
+**Tipo:** Planificación  
+**Microservicio:** No  
+**Prioridad:** P0 - Critical  
+**Estimación:** 5 pts  
+**Fecha Inicio:** 06/04/2026  
+**Fecha Conclusión:** 07/04/2026
+
+**Documentación Requerida:**
+
+- 📖 Documentación de arquitectura de microservicios
+- 📖 Especificaciones técnicas del stack elegido
+
+**Descripción:**
+Definición de la arquitectura de microservicios y plan de desarrollo para establecer una base técnica sólida.
+
+**Criterios de Aceptación:**
+
+- [ ] Arquitectura de microservicios definida (siat-auth, cuis, cufd, firma, factura)
+- [ ] Tecnologías especificadas (Spring Boot, Angular, PostgreSQL, Keycloak)
+- [ ] Modelo de datos inicial (ERD) diseñado
+- [ ] API contracts entre frontend y backend definidos
+- [ ] Estrategia de CI/CD planificada
+- [ ] Convenciones de código y branching strategy (GitFlow) definidas
+
+**Entregables:**
+
+```
+1. Diagrama de arquitectura de microservicios
+2. Diagrama ERD de base de datos
+3. API contract documentation (OpenAPI/Swagger)
+4. Plan de CI/CD
+5. Guía de desarrollo y estándares de código
+```
+
+**Nota:** Considera que el 03/04 (Viernes Santo) es feriado. La planificación comienza el lunes 06/04. Depende de: SFE-ANALISIS-001
+
+---
+
 ## MÓDULO A: GESTIÓN DE CONECTIVIDAD Y SEGURIDAD
 
 ---
@@ -1802,22 +1888,39 @@ Implementar estrategia de almacenamiento durable de todas las facturas, XMLs, PD
 
 | # | Ticket | Títul | Tipo | Microservice | P | Pts | Inicio | Fin |
 |---|--------|-------|------|-------------|---|-----|--------|-----|
-| 1 | SFE-001 | Token Delegado | Backend | siat-auth-service | P0 | 5 | 15/03 | 25/03 |
-| 2 | SFE-002 | CUIS Renovación | Backend | cuis-service | P0 | 8 | 26/03 | 05/04 |
-| 3 | SFE-003 | CUFD Renovación | Backend | cufd-service | P0 | 8 | 26/03 | 05/04 |
-| 4 | SFE-004 | Firma Digital | Backend | firma-digital-service | P0 | 13 | 06/04 | 24/04 |
-| 5 | SFE-005 | XML Generación | Backend | factura-service | P0 | 13 | 25/04 | 14/05 |
-| 6 | SFE-006 | CUF Cálculo | Backend | numero-factura-service | P0 | 3 | 15/04 | 20/04 |
-| 7 | SFE-007 | Anulación | Backend | factura-service | P1 | 8 | 20/05 | 28/05 |
-| 8 | SFE-008 | Reversión | Backend | factura-service | P1 | 8 | 29/05 | 06/06 |
-| 9 | SFE-009 | Homologación | Fullstack | N/A | P0 | 13 | 01/04 | 20/04 |
-| 10 | SFE-010 | Detección Contingencia | Backend | contingencia-service | P0 | 5 | 07/06 | 12/06 |
-| 11 | SFE-011 | Paquetes Masivos | Backend | paquete-service | P1 | 8 | 13/06 | 21/06 |
-| 12 | SFE-012 | Email + QR + PDF | Fullstack | N/A | P1 | 13 | 22/06 | 10/07 |
-| 13 | SFE-013 | Cifrado + Keycloak | Backend | auth-service | P0 | 13 | 01/04 | 20/04 |
-| 14 | SFE-014 | Retry Logic | Backend | Infrastructure | P0 | 8 | 21/04 | 30/04 |
-| 15 | SFE-015 | Performance < 2s | Backend | firma-digital-service | P1 | 13 | 29/04 | 20/05 |
-| 16 | SFE-016 | Almacenamiento 8 años | Backend | storage-service | P0 | 13 | 20/05 | 10/06 |
+## TABLA RESUMEN DE TICKETS
+
+| # | Ticket | Título | Tipo | Microservice | P | Pts | Inicio | Fin | Linear ID |
+|---|--------|--------|------|-------------|---|-----|--------|-----|-----------|
+| 0.1 | SFE-ANALISIS-001 | Análisis Requerimientos SIN | Análisis | N/A | P0 | 3 | 01/04 | 02/04 | INF-133 |
+| 0.2 | SFE-PLAN-001 | Planificación Arquitectura | Planificación | N/A | P0 | 5 | 06/04 | 07/04 | INF-134 |
+| 1 | SFE-001 | Token Delegado | Backend | siat-auth-service | P0 | 5 | 01/04 | 10/04 | INF-106 |
+| 2 | SFE-002 | CUIS Renovación | Backend | cuis-service | P0 | 8 | 11/04 | 24/04 | INF-107 |
+| 3 | SFE-003 | CUFD Renovación | Backend | cufd-service | P0 | 8 | 11/04 | 24/04 | INF-108 |
+| 4 | SFE-004.1 | Firma Digital - Algoritmos | Backend | firma-digital-service | P0 | 8 | 25/04 | 10/05 | INF-109 |
+| 4.2 | SFE-004.2 | Firma Digital - Implementación | Backend | firma-digital-service | P0 | 5 | 11/05 | 15/05 | INF-110 |
+| 5.1 | SFE-005.1 | XML Generación - Sector Estándar | Backend | factura-service | P0 | 5 | 14/04 | 22/04 | INF-111 |
+| 5.2 | SFE-005.2 | XML Generación - Sectores Especiales | Backend | factura-service | P0 | 5 | 23/04 | 29/04 | INF-124 |
+| 5.3 | SFE-005.3 | XML Generación - Reintegros | Backend | factura-service | P0 | 3 | 30/04 | 06/05 | INF-125 |
+| 6 | SFE-006 | CUF Cálculo | Backend | numero-factura-service | P0 | 3 | 21/04 | 24/04 | INF-112 |
+| 7 | SFE-007 | Anulación | Backend | factura-service | P1 | 8 | 27/04 | 11/05 | INF-113 |
+| 8 | SFE-008 | Reversión | Backend | factura-service | P1 | 8 | 18/05 | 25/06 | INF-128 |
+| 9 | SFE-009 | Homologación | Fullstack | catalogo-service | P1 | 13 | 28/04 | 17/05 | INF-114 |
+| 9.1 | SFE-009.1 | Homologación Frontend | Frontend | Angular | P1 | 8 | 28/04 | 17/05 | INF-129 |
+| 10 | SFE-010 | Detección Contingencia | Backend | contingencia-service | P0 | 13 | 15/05 | 04/06 | INF-115 |
+| 11 | SFE-011 | Paquetes Masivos | Backend | paquete-service | P0 | 13 | 05/06 | 25/06 | INF-116 |
+| 12.1 | SFE-012.1 | QR Validación | Backend | pdf-service | P1 | 3 | 26/06 | 15/07 | INF-117 |
+| 12.2 | SFE-012.2 | PDF con QR | Backend | pdf-service | P1 | 5 | 26/06 | 15/07 | INF-118 |
+| 12.3 | SFE-012.3 | Email Factura | Fullstack | email-service | P1 | 5 | 26/06 | 15/07 | INF-119 |
+| 13 | SFE-013 | Cifrado + Keycloak | Backend | auth-service | P0 | 13 | 01/04 | 20/04 | INF-120 |
+| 14 | SFE-014 | Retry Logic | Backend | Infrastructure | P0 | 8 | 25/04 | 20/05 | INF-121 |
+| 15 | SFE-015 | Performance < 2s | Backend | firma-digital-service | P1 | 13 | 29/04 | 20/05 | INF-122 |
+| 16 | SFE-016 | Almacenamiento 8 años | Backend | storage-service | P0 | 13 | 20/05 | 10/06 | INF-123 |
+| F001 | SFE-F001 | Frontend Config | Frontend | Angular | P1 | 8 | 28/04 | 15/07 | INF-130 |
+| F002 | SFE-F002 | Dashboard Monitoreo | Frontend | Angular | P1 | 8 | 26/06 | 15/07 | INF-131 |
+
+**Total de Tickets:** 26  
+**Total Story Points:** 193 pts
 
 ---
 
